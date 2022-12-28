@@ -25,7 +25,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     public Registration addRegistration(Registration registration) {
         registration = registrationRepository.save(registration);
 
-        if (registration.getId() == null) {
+        if (registration.getId() != null) {
             Course course = new Course();
             course.setName("Intro");
             course.setDescription("Every attendee must complete the intro.");
@@ -45,7 +45,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 
     @Override
     public List<RegistrationReport> findAllReports() {
-        return registrationRepository.findAllReports();
+        return registrationRepository.registrationReport();
     }
 }
 

@@ -13,8 +13,8 @@ import java.util.List;
         @NamedQuery(name = Registration.REGISTRATION_REPORT, query = Registration.REGISTRATION_REPORT_JPQL)
 })
 public class Registration {
-
-    public static final String REGISTRATION_REPORT = "registrationReport";
+// we have changed the value from "registrationReport" to "Registration.registrationReport" to implement NamedQuery in Spring Data JPA way
+    public static final String REGISTRATION_REPORT = "Registration.registrationReport";
 
     public static final String REGISTRATION_REPORT_JPQL =
             "SELECT new com.pluralsight.conference.model.RegistrationReport" +
